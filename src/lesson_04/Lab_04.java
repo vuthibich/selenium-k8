@@ -8,9 +8,11 @@ public class Lab_04 {
     public static void main(String[] args) {
         int t;
         List<Integer> intArray=new ArrayList<>();
-        while (true) {
+        boolean ischeck = true;
+        while (ischeck) {
             Scanner sc = new Scanner(System.in);
             System.out.println("-----Menu----");
+            System.out.println("0. Exit!");
             System.out.println("1. ADD number into Arraylist");
             System.out.println("2. Print numbers");
             System.out.println("3. Get maximun number");
@@ -18,6 +20,10 @@ public class Lab_04 {
             System.out.println("Enter Choice");
             t = sc.nextInt(); // lua chon
             switch (t) {
+                case 0:
+                    ischeck = false;
+                    System.out.println("See you again!");
+                    break;
                 case 1:
                     System.out.println("Enter cout list");
                     int count = sc.nextInt(); //nhập từ bàn phím
@@ -60,6 +66,9 @@ public class Lab_04 {
                         System.out.println();
                         break;
                     }
+                default:
+                    System.out.println("Nhap loi roi nhap lai di");
+                    break;
             }
         }
 
