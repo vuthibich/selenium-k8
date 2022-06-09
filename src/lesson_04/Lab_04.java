@@ -1,11 +1,13 @@
 package lesson_04;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class Switchcase {
+public class Lab_04 {
     public static void main(String[] args) {
         int t;
-        int[] list = null;
+        List<Integer> intArray=new ArrayList<>();
         while (true) {
             Scanner sc = new Scanner(System.in);
             System.out.println("-----Menu----");
@@ -14,48 +16,47 @@ public class Switchcase {
             System.out.println("3. Get maximun number");
             System.out.println("4. Get minimun number");
             System.out.println("Enter Choice");
-            t = sc.nextInt();
+            t = sc.nextInt(); // lua chon
             switch (t) {
                 case 1:
                     System.out.println("Enter cout list");
-                    int count = sc.nextInt();
-                    list = new int[count];
+                    int count = sc.nextInt(); //nhập từ bàn phím
                     for (int i = 0; i < count; i++) {
                         int x = sc.nextInt();
-                        list[i] = x;
+                        intArray.add(x);
                     }
                     break;
                 case 2:
-                    if (list != null) {
-                        for(int i = 0; i < list.length; i++) {
-                            System.out.print(list[i] + " ");
+                    if (intArray.size() > 0) {
+                        for(int i = 0; i < intArray.size(); i++) {
+                            System.out.print(intArray.get(i) + " ");
                         }
                         System.out.println();
                         break;
                     }
 
                 case 3:
-                    if (list != null) {
-                        int max = list[0];
-                        for(int i = 0; i < list.length; i++) {
-                            if (list[i] > max) {
-                                max = list[i];
+                    if (intArray.size() > 0) {
+                        int max = intArray.get(0);
+                        for(int i = 0; i < intArray.size(); i++) {
+                            if (intArray.get(i) > max) {
+                                max = intArray.get(i);
                             }
                         }
-                        System.out.println(max);
+                        System.out.println("number max: "+max);
                         System.out.println();
                         break;
                     }
 
                 case 4:
-                    if (list != null) {
-                        int min = list[0];
-                        for (int i = 0; i < list.length; i++) {
-                            if (list[i] < min) {
-                                min = list[i];
+                    if (intArray.size() > 0) {
+                        int min = intArray.get(0);
+                        for (int i = 0; i < intArray.size(); i++) {
+                            if (intArray.get(i) < min) {
+                                min = intArray.get(i);
                             }
                         }
-                        System.out.println(min);
+                        System.out.println("Number min: "+min);
                         System.out.println();
                         break;
                     }
